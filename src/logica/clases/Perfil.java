@@ -11,8 +11,6 @@ public class Perfil {
     private LocalDate ingreso;
     private int cantSeguidores;
     private int cantSeguidos;
-    private List<Perfil> Seguidores = new ArrayList<>();
-    private List<Perfil> Seguidos = new ArrayList<>();
     private int cantPublicaciones;
     private List<Publicacion> publicaciones = new ArrayList<>();
     private int cantAlbumes;
