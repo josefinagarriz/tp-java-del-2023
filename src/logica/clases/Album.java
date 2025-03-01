@@ -91,6 +91,39 @@ public class Album {
         cantPublicaciones++;
     }
 
+    //gestionar album
 
+    /*
 
+    HACER EXEPCIONES NUEVAS
+
+    */
+    public void agregarPublicacion(Publicacion p)
+    {
+        if (p == null)
+            throw new IllegalArgumentException("No se encuentra la publicación");
+        else
+            if(!publicaciones.contains((p))) //evita duplicados
+                publicaciones.add(p);
+            else
+                throw new IllegalArgumentException("No se puede tener publicaciones duplicadas en unmismo album");
+    }
+
+    /*
+
+    HACER EXEPCIONES NUEVAS
+
+    */
+    public void eliminarPublicacion(Publicacion p)
+    {
+        if (p == null)
+            throw new IllegalArgumentException("No se encuentra la publicación");
+        else
+            if (publicaciones.contains(p)) //verificar si la publicación está en la lista
+                publicaciones.remove(p);
+            else
+                throw new IllegalArgumentException("No se encontró la publicación");
+    }
+
+    //AGREGAR SUBALBUM, ELIMINAR SUBALBUM, ELIMINAR TODO EL ABUM, CREAR EL ALBUM
 }
