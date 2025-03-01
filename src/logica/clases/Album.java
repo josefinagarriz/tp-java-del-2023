@@ -125,5 +125,10 @@ public class Album {
                 throw new IllegalArgumentException("No se encontró la publicación");
     }
 
-    //AGREGAR SUBALBUM, ELIMINAR SUBALBUM, ELIMINAR TODO EL ABUM, CREAR EL ALBUM
+    public void crearSubalbum(Album subalbum)
+    {
+        subAlbumes.add(subalbum);
+    }
+
+    //CREAR SUBALBUM, ELIMINAR SUBALBUM, ELIMINAR TODO EL ABUM, CREAR EL ALBUM
 }
