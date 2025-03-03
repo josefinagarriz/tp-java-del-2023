@@ -23,4 +23,9 @@ public class Publicacion {
         cantLikes=0;
         cantComentarios=0;
     }
+
+
+    //getters
+
+    public int getCantLikes() {return cantLikes;}
 }
