@@ -28,4 +28,7 @@ public class Publicacion {
     //getters
 
     public int getCantLikes() {return cantLikes;}
+    public String getTitulo() {return titulo;}
+    public LocalDate getFecha() {return fecha;}
+    public LocalTime getHora() {return hora;}
 }
