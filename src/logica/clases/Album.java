@@ -91,12 +91,7 @@ public class Album {
     }
 
 
-
-
-
-
-
-    //gestionar album
+    //Gestionar publicaciones
 
     /*
 
@@ -106,7 +101,6 @@ public class Album {
     public void agregarPublicacion(Publicacion p) {
         if (p == null)
             throw new IllegalArgumentException("La publicación no puede ser null.");
-
         else
         if(publicaciones.contains(p))
             throw new IllegalArgumentException("La publicación ya está en el álbum.");
@@ -130,13 +124,11 @@ public class Album {
             case 6 -> comparator = Comparator.comparingInt(Publicacion::getCantLikes).reversed(); // Likes descendente
             default -> throw new IllegalArgumentException("Orden no válido: " + orden);
         }
-
         // Buscar la posición correcta en la lista ordenada
         int index = 0;
         while (index < publicaciones.size() && comparator.compare(publicaciones.get(index), p) < 0) {
             index++;
         }
-
         // Insertar en la posición correcta
         publicaciones.add(index, p);
     }}
@@ -155,6 +147,53 @@ public class Album {
                 publicaciones.remove(p);
             else
                 throw new IllegalArgumentException("No se encontró la publicación");
+    }
+
+
+    //Gestionar albumes
+
+    public void eliminarTodoDelAlbum()
+    {
+        publicaciones.clear(); // Eliminamos todas las publicaciones del álbum pero no las eliminamos del perfil
+        for (Album subAlbum: new ArrayList<>(subAlbumes)) // Usamos una copia para evitar problemas al iterar
+            subAlbum.eliminarTodoDelAlbum(); // Llamado recursivo para limpiar los subálbumes
+        subAlbumes.clear(); //vaciamos la lista de subálbumes
+    }
+
+    /*
+
+        HACER EXEPCIONES NUEVAS
+
+        */
+    public void eliminarSubAlbum(Album subAlbum)
+    {
+        if (subAlbum == null) {
+            throw new IllegalArgumentException("El subálbum no puede ser null.");
+        }
+        else
+        if (subAlbumes.contains(subAlbum)) //verificar si el subalbum está en la lista
+        {
+            // Limpiar todas las publicaciones y subálbumes dentro de este subálbum
+            subAlbum.eliminarTodoDelAlbum();
+            // Eliminar el subálbum de la lista
+            subAlbumes.remove(subAlbum);
+        }
+        else
+            throw new IllegalArgumentException("No se encontró el subalbum");
+
+    }
+
+    public boolean buscarSubAlbum(Album subAlbum) {
+        if (subAlbumes.contains(subAlbum)) {
+            return true;
+        }
+        // Búsqueda en los subálbumes recursivamente
+        for (Album sub : subAlbumes) {
+            if (sub.buscarSubAlbum(subAlbum)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void crearSubalbum(Album subalbum)
