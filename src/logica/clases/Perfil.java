@@ -28,6 +28,27 @@ public class Perfil {
     }
 
     //Gestionar Albumes
+
+    public void crearAlbum(String nom, LocalDate fecha, LocalTime hora, int o) {
+        if (nom == null || nom.isEmpty()) {
+            throw new IllegalArgumentException("El nombre del álbum no puede estar vacío.");
+        }
+
+        Album nuevoAlbum = new Album(nom, fecha, hora, o);
+        albumes.add(nuevoAlbum);
+    }
+
+    public void crearSubAlbumEnAlbum(Album albumPrincipal, String nom, LocalDate fecha, LocalTime hora, int o) {
+        if (albumPrincipal == null || nom == null || nom.isEmpty()) {
+            throw new IllegalArgumentException("El álbum o el nombre del subálbum no pueden ser null o vacíos.");
+        }
+        if (!albumes.contains(albumPrincipal)) {
+            throw new IllegalArgumentException("El álbum principal no pertenece a este perfil.");
+        }
+
+        albumPrincipal.crearSubAlbum(nom, fecha, hora, o);
+    }
+
      /*
 
     HACER EXEPCIONES NUEVAS
@@ -96,5 +117,61 @@ public class Perfil {
         }
         else
             album.eliminarPublicacion(p); // Llama al método de Album
+    }
+
+    public void agregarPublicacionEnSubAlbum(Publicacion p, Album albumPrincipal, Album subAlbum) {
+        if (p == null || albumPrincipal == null || subAlbum == null) {
+            throw new IllegalArgumentException("La publicación, el álbum o el subálbum no pueden ser null.");
+        }
+        if (!albumes.contains(albumPrincipal)) {
+            throw new IllegalArgumentException("El álbum principal no pertenece a este perfil.");
+        }
+
+        boolean agregado = albumPrincipal.agregarPublicacionEnSubAlbum(p, subAlbum);
+        if (!agregado) {
+            throw new IllegalArgumentException("El subálbum no pertenece al álbum proporcionado.");
+        }
+    }
+
+    public void eliminarPublicacionEnSubAlbum(Publicacion p, Album albumPrincipal, Album subAlbum) {
+        if (p == null || albumPrincipal == null || subAlbum == null) {
+            throw new IllegalArgumentException("La publicación, el álbum o el subálbum no pueden ser null.");
+        }
+        if (!albumes.contains(albumPrincipal)) {
+            throw new IllegalArgumentException("El álbum principal no pertenece a este perfil.");
+        }
+
+        boolean eliminado = albumPrincipal.eliminarPublicacionEnSubAlbum(p, subAlbum);
+        if (!eliminado) {
+            throw new IllegalArgumentException("El subálbum no pertenece al álbum proporcionado o la publicación no existe.");
+        }
+    }
+
+    public void copiarPublicacionEntreAlbumes(Publicacion p, Album origen, Album destino) {
+        if (p == null || origen == null || destino == null) {
+            throw new IllegalArgumentException("Publicación, álbum de origen o álbum de destino no pueden ser null.");
+        }
+        if (!albumes.contains(origen) && !buscarAlbumEnSubAlbumes(albumes, origen)) {
+            throw new IllegalArgumentException("El álbum de origen no pertenece a este perfil.");
+        }
+        if (!albumes.contains(destino) && !buscarAlbumEnSubAlbumes(albumes, destino)) {
+            throw new IllegalArgumentException("El álbum de destino no pertenece a este perfil.");
+        }
+        destino.agregarPublicacion(p);
+    }
+
+    public void moverPublicacionEntreAlbumes(Publicacion p, Album origen, Album destino) {
+        copiarPublicacionEntreAlbumes(p, origen, destino); // Primero la copia
+        origen.eliminarPublicacion(p); // Luego la elimina del álbum original
+    }
+
+    // Método auxiliar para buscar un álbum en los subálbumes recursivamente
+    private boolean buscarAlbumEnSubAlbumes(List<Album> listaAlbumes, Album albumBuscado) {
+        for (Album album : listaAlbumes) {
+            if (album == albumBuscado || buscarAlbumEnSubAlbumes(album.getSubAlbumes(), albumBuscado)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

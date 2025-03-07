@@ -22,7 +22,8 @@ public class Album {
 
 
     //getters
-
+    public List<Album> getSubAlbumes()
+    {return subAlbumes;}
 
     //setters
     public void setOrden(int o)
@@ -149,6 +150,61 @@ public class Album {
                 throw new IllegalArgumentException("No se encontró la publicación");
     }
 
+    public boolean agregarPublicacionEnSubAlbum(Publicacion p, Album subAlbum) {
+        if (subAlbumes.contains(subAlbum)) {
+            subAlbum.agregarPublicacion(p);
+            return true;
+        }
+        for (Album sub : subAlbumes) {
+            if (sub.agregarPublicacionEnSubAlbum(p, subAlbum)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarPublicacionEnSubAlbum(Publicacion p, Album subAlbum) {
+        if (subAlbumes.contains(subAlbum)) {
+            subAlbum.eliminarPublicacion(p);
+            return true;
+        }
+        for (Album sub : subAlbumes) {
+            if (sub.eliminarPublicacionEnSubAlbum(p, subAlbum)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean copiarPublicacionEnSubAlbum(Publicacion p, Album destino) {
+        if (p == null || destino == null) {
+            throw new IllegalArgumentException("La publicación o el álbum de destino no pueden ser null.");
+        }
+        if (this == destino || buscarSubAlbumAuxiliar(destino)) {
+            destino.agregarPublicacion(p);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moverPublicacionEnSubAlbum(Publicacion p, Album destino) {
+        if (copiarPublicacionEnSubAlbum(p, destino)) {
+            eliminarPublicacion(p);
+            return true;
+        }
+        return false;
+    }
+
+    // Método auxiliar para buscar un álbum en los subálbumes recursivamente
+    private boolean buscarSubAlbumAuxiliar(Album albumBuscado) {
+        for (Album sub : subAlbumes) {
+            if (sub == albumBuscado || sub.buscarSubAlbumAuxiliar(albumBuscado)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     //Gestionar albumes
 
@@ -201,10 +257,27 @@ public class Album {
         subAlbumes.add(subalbum);
     }
 
-    //CREAR SUBALBUM, ELIMINAR SUBALBUM, ELIMINAR TODO EL ABUM, CREAR EL ALBUM
+    public void crearSubAlbum(String nom, LocalDate fecha, LocalTime hora, int o) {
+        if (nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("El nombre del subálbum no puede estar vacío.");
+        }
 
+        Album nuevoSubAlbum = new Album(nom, fecha, hora, o);
+        subAlbumes.add(nuevoSubAlbum);
+    }
 
-
+    public boolean crearSubAlbumEnSubAlbum(Album subAlbumPadre, String nom, LocalDate fecha, LocalTime hora, int o) {
+        if (subAlbumes.contains(subAlbumPadre)) {
+            subAlbumPadre.crearSubAlbum(nom, fecha, hora, o);
+            return true;
+        }
+        for (Album sub : subAlbumes) {
+            if (sub.crearSubAlbumEnSubAlbum(subAlbumPadre, nom, fecha, hora, o)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
