@@ -5,17 +5,54 @@ import java.time.LocalTime;
 
 public class Video extends Publicacion implements logica.interfaces.Durable, logica.interfaces.Filtrable{
 
-    private int duracionMinutos;
-    private int duracionSegundos;
+    private double duracionSegundos;
     private int resolucion;
     private int cantCuadros;
 
-    public Video (int dM, int dS, int res, int cantC, String tit, String des, LocalDate f, LocalTime h)
+    public Video (double dS, int res, int cantC, String tit, String des, LocalDate f, LocalTime h)
     {
         super (tit, des, f, h);
-        duracionMinutos= dM;
         duracionSegundos= dS;
         resolucion= res;
         cantCuadros= cantC;
     }
+
+    @Override
+    public double getDuracion()
+    {
+        return duracionSegundos;
+    }
+
+    @Override
+    public void avanzar(double seg)
+    {
+        System.out.println("Avanzando "+seg+" en el video "+ getTitulo());
+    }
+
+    @Override
+    public void retroceder(double seg)
+    {
+        System.out.println("Retrocediendo "+seg+" en el video "+ getTitulo());
+    }
+
+    @Override
+    public void detener() {
+        System.out.println("Deteniendo el video "+ getTitulo());
+    }
+
+    @Override
+    public void reanudar() {
+        System.out.println("Reanudar el video "+ getTitulo());
+    }
+
+    @Override
+    public void aplicarFiltro(String filtro) {
+        System.out.println("Aplicando filtro " + filtro +" en el video "+ getTitulo());
+    }
+
+    @Override
+    public void sacarFiltro() {
+        System.out.println("Sacando filtro en el video "+ getTitulo());
+    }
+
 }
