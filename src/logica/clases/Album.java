@@ -22,8 +22,9 @@ public class Album {
 
 
     //getters
-    public List<Album> getSubAlbumes()
-    {return subAlbumes;}
+    public List<Album> getSubAlbumes() {return subAlbumes;}
+    public String getNombre() {return nombre;}
+    public List<Publicacion> getPublicaciones() {return publicaciones;}
 
     //setters
     public void setOrden(int o)

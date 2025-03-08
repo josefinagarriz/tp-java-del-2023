@@ -27,6 +27,10 @@ public class Perfil {
         cantAlbumes=0;
     }
 
+    //Getters
+    public List<Publicacion> getPublicaciones() {return publicaciones;}
+    public List<Album> getAlbumes() {return albumes;}
+
     //Gestionar Albumes
 
     public void crearAlbum(String nom, LocalDate fecha, LocalTime hora, int o) {
