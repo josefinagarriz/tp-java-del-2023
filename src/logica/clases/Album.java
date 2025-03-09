@@ -253,27 +253,22 @@ public class Album {
         return false;
     }
 
-    public void crearSubalbum(Album subalbum)
-    {
-        subAlbumes.add(subalbum);
-    }
-
-    public void crearSubAlbum(String nom, LocalDate fecha, LocalTime hora, int o) {
+    public void crearSubAlbum(String nom, int o) {
         if (nombre == null || nombre.isEmpty()) {
             throw new IllegalArgumentException("El nombre del subálbum no puede estar vacío.");
         }
 
-        Album nuevoSubAlbum = new Album(nom, fecha, hora, o);
+        Album nuevoSubAlbum = new Album(nom, LocalDate.now(), LocalTime.now(), o);
         subAlbumes.add(nuevoSubAlbum);
     }
 
-    public boolean crearSubAlbumEnSubAlbum(Album subAlbumPadre, String nom, LocalDate fecha, LocalTime hora, int o) {
+    public boolean crearSubAlbumEnSubAlbum(Album subAlbumPadre, String nom, int o) {
         if (subAlbumes.contains(subAlbumPadre)) {
-            subAlbumPadre.crearSubAlbum(nom, fecha, hora, o);
+            subAlbumPadre.crearSubAlbum(nom, o);
             return true;
         }
         for (Album sub : subAlbumes) {
-            if (sub.crearSubAlbumEnSubAlbum(subAlbumPadre, nom, fecha, hora, o)) {
+            if (sub.crearSubAlbumEnSubAlbum(subAlbumPadre, nom, o)) {
                 return true;
             }
         }

@@ -5,8 +5,6 @@ import java.time.*;
 
 public class Perfil {
 
-    private static int cont=0;
-    private int cod;
     private String nombreUsuario;
     private LocalDate ingreso;
     private int cantSeguidores;
@@ -18,7 +16,6 @@ public class Perfil {
 
     public Perfil (String nomU, LocalDate ing)
     {
-        cod=++cont;
         nombreUsuario=nomU;
         ingreso=ing;
         cantSeguidores=0;
@@ -33,16 +30,16 @@ public class Perfil {
 
     //Gestionar Albumes
 
-    public void crearAlbum(String nom, LocalDate fecha, LocalTime hora, int o) {
+    public void crearAlbum(String nom, int o) {
         if (nom == null || nom.isEmpty()) {
             throw new IllegalArgumentException("El nombre del álbum no puede estar vacío.");
         }
 
-        Album nuevoAlbum = new Album(nom, fecha, hora, o);
+        Album nuevoAlbum = new Album(nom, LocalDate.now(), LocalTime.now(), o);
         albumes.add(nuevoAlbum);
     }
 
-    public void crearSubAlbumEnAlbum(Album albumPrincipal, String nom, LocalDate fecha, LocalTime hora, int o) {
+    public void crearSubAlbumEnAlbum(Album albumPrincipal, String nom, int o) {
         if (albumPrincipal == null || nom == null || nom.isEmpty()) {
             throw new IllegalArgumentException("El álbum o el nombre del subálbum no pueden ser null o vacíos.");
         }
@@ -50,7 +47,7 @@ public class Perfil {
             throw new IllegalArgumentException("El álbum principal no pertenece a este perfil.");
         }
 
-        albumPrincipal.crearSubAlbum(nom, fecha, hora, o);
+        albumPrincipal.crearSubAlbum(nom, o);
     }
 
      /*
