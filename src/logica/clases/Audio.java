@@ -2,15 +2,16 @@ package logica.clases;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Audio extends Publicacion implements logica.interfaces.Durable{
 
     private double duracionSegundos;
     private int velocidadBits;
 
-    public Audio (double dS, int vB, String tit, String des, LocalDate f, LocalTime h)
+    public Audio (double dS, int vB, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
-        super (tit, des, f, h);
+        super (c, des, f, h, likes, et,  com);
         duracionSegundos= dS;
         velocidadBits= vB;
     }

@@ -2,6 +2,7 @@ package logica.clases;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
 
@@ -9,9 +10,9 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
     private int ancho;
     private int alto;
 
-    public Imagen (int res, int an, int al, String tit, String des, LocalDate f, LocalTime h)
+    public Imagen (int res, int an, int al, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
-        super (tit, des, f, h);
+        super (c, des, f, h, likes, et, com);
         resolucion= res;
         ancho= an;
         alto= al;

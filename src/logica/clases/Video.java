@@ -2,6 +2,7 @@ package logica.clases;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Video extends Publicacion implements logica.interfaces.Durable, logica.interfaces.Filtrable{
 
@@ -9,9 +10,9 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
     private int resolucion;
     private int cantCuadros;
 
-    public Video (double dS, int res, int cantC, String tit, String des, LocalDate f, LocalTime h)
+    public Video (double dS, int res, int cantC, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
-        super (tit, des, f, h);
+        super (c, des, f, h,  likes, et, com);
         duracionSegundos= dS;
         resolucion= res;
         cantCuadros= cantC;

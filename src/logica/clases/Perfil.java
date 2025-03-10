@@ -48,6 +48,11 @@ public class Perfil {
         return audios;
     }
 
+    //agregar publicaciones
+    public void agregarPublicacion(Publicacion p) {
+        publicaciones.add(p);
+    }
+
     //Contar
     public int contarCantPublicaciones() {return publicaciones.size();}
     public int contarCantAlbumes() {return albumes.size();}

@@ -13,14 +13,15 @@ public class Publicacion {
     private List<String> etiquetas = new ArrayList<>();
     private int cantComentarios;
 
-    public Publicacion (String c,String des, LocalDate f, LocalTime h)
+    public Publicacion (String c,String des, LocalDate f, LocalTime h, int likes, List<String>et, int com)
     {
         codigo=c;
         descripcion=des;
         fecha=f;
         hora=h;
-        cantLikes=0;
-        cantComentarios=0;
+        cantLikes=likes;
+        etiquetas = (et != null) ? new ArrayList<>(et) : new ArrayList<>(); // Copia la lista o crea una nueva vacía si es null
+        cantComentarios=com;
     }
 
 
