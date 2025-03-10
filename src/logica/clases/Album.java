@@ -10,7 +10,7 @@ public class Album {
     private LocalTime horaCreacion;
     private List<Publicacion> publicaciones = new ArrayList<>();
     private List<Album> subAlbumes = new ArrayList<>();
-    private int orden; // 1= por publicación de la publicaión (ascendente), 2= por publicación de la publicación (descendente), 3= por titulo de publicación (a-z), 4= por titulo de publicación (z-a), 5= por cantidad de likes (ascendente), 6= por cantidad de likes (descendente)
+    private int orden; // 1= por publicación de la publicaión (ascendente), 2= por publicación de la publicación (descendente), 3= por cantidad de likes (ascendente), 4= por cantidad de likes (descendente)
 
     public Album(String nom, LocalDate fecha, LocalTime hora, int o)
     {
@@ -34,10 +34,8 @@ public class Album {
         switch (orden) {
             case 1 -> publicaciones.sort(Comparator.comparing(Publicacion::getFecha));
             case 2 -> publicaciones.sort(Comparator.comparing(Publicacion::getFecha).reversed());
-            case 3 -> publicaciones.sort(Comparator.comparing(Publicacion::getTitulo));
-            case 4 -> publicaciones.sort(Comparator.comparing(Publicacion::getTitulo).reversed());
-            case 5 -> publicaciones.sort(Comparator.comparingInt(Publicacion::getCantLikes));
-            case 6 -> publicaciones.sort(Comparator.comparingInt(Publicacion::getCantLikes).reversed());
+            case 3 -> publicaciones.sort(Comparator.comparingInt(Publicacion::getCantLikes));
+            case 4 -> publicaciones.sort(Comparator.comparingInt(Publicacion::getCantLikes).reversed());
         }
     }
 
@@ -123,11 +121,8 @@ public class Album {
                     .comparing(Publicacion::getFecha)
                     .thenComparing(Publicacion::getHora)
                     .reversed(); // Fecha descendente, si hay empate compara la hora
-
-            case 3 -> comparator = Comparator.comparing(Publicacion::getTitulo); // Título A-Z
-            case 4 -> comparator = Comparator.comparing(Publicacion::getTitulo).reversed(); // Título Z-A
-            case 5 -> comparator = Comparator.comparingInt(Publicacion::getCantLikes); // Likes ascendente
-            case 6 -> comparator = Comparator.comparingInt(Publicacion::getCantLikes).reversed(); // Likes descendente
+            case 3 -> comparator = Comparator.comparingInt(Publicacion::getCantLikes); // Likes ascendente
+            case 4 -> comparator = Comparator.comparingInt(Publicacion::getCantLikes).reversed(); // Likes descendente
             default -> throw new IllegalArgumentException("Orden no válido: " + orden);
         }
         // Buscar la posición correcta en la lista ordenada

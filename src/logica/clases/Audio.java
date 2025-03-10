@@ -24,22 +24,22 @@ public class Audio extends Publicacion implements logica.interfaces.Durable{
     @Override
     public void avanzar(double seg)
     {
-        System.out.println("Avanzando "+seg+" en el audio "+ getTitulo());
+        System.out.println("Avanzando "+seg+" en el audio "+ getCodigo());
     }
 
     @Override
     public void retroceder(double seg)
     {
-        System.out.println("Retrocediendo "+seg+" en el audio "+ getTitulo());
+        System.out.println("Retrocediendo "+seg+" en el audio "+ getCodigo());
     }
 
     @Override
     public void detener() {
-        System.out.println("Deteniendo el audio "+ getTitulo());
+        System.out.println("Deteniendo el audio "+ getCodigo());
     }
 
     @Override
     public void reanudar() {
-        System.out.println("Reanudar el audio "+ getTitulo());
+        System.out.println("Reanudar el audio "+ getCodigo());
     }
 }

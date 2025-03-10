@@ -5,7 +5,7 @@ import java.time.*;
 
 public class Publicacion {
 
-    private String titulo;
+    private String codigo;
     private String descripcion;
     private LocalDate fecha;
     private LocalTime hora;
@@ -13,9 +13,9 @@ public class Publicacion {
     private List<String> etiquetas = new ArrayList<>();
     private int cantComentarios;
 
-    public Publicacion (String tit,String des, LocalDate f, LocalTime h)
+    public Publicacion (String c,String des, LocalDate f, LocalTime h)
     {
-        titulo=tit;
+        codigo=c;
         descripcion=des;
         fecha=f;
         hora=h;
@@ -27,7 +27,7 @@ public class Publicacion {
     //getters
 
     public int getCantLikes() {return cantLikes;}
-    public String getTitulo() {return titulo;}
+    public String getCodigo() {return codigo;}
     public LocalDate getFecha() {return fecha;}
     public LocalTime getHora() {return hora;}
     public int getCantComentarios() {return cantComentarios;}

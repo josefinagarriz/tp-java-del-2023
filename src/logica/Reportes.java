@@ -52,7 +52,7 @@ public class Reportes {
         System.out.println("Cantidad de publicaciones: " + lista.size());
         System.out.println("Promedio de 'me gusta': " + promedioLikes);
         for (Publicacion p : lista) {
-            System.out.println(" - " + p.getTitulo() + " (" + p.getCantLikes() + " likes)");
+            System.out.println(" - " + p.getCodigo() + " (" + p.getCantLikes() + " likes)");
         }
     }
 
@@ -76,7 +76,7 @@ public class Reportes {
         writer.write("Cantidad de publicaciones: " + lista.size() + "\n");
         writer.write("Promedio de 'me gusta': " + promedioLikes + "\n");
         for (Publicacion p : lista) {
-            writer.write(" - " + p.getTitulo() + " (" + p.getCantLikes() + " likes)\n");
+            writer.write(" - " + p.getCodigo() + " (" + p.getCantLikes() + " likes)\n");
         }
     }
 

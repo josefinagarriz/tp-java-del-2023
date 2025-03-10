@@ -28,8 +28,15 @@ public class Main {
         }
 
         // Mostrar los datos cargados
-
-
+        System.out.println("Imagenes:");
+        for(Imagen i : p.getImagenes())
+            System.out.println(i.getCodigo());
+        System.out.println("Videos:");
+        for(Video v : p.getVideos())
+            System.out.println(v.getCodigo());
+        System.out.println("Imagenes:");
+        for(Audio a : p.getAudios())
+            System.out.println(a.getCodigo());
 
         // Interfaz grafica
         PaginaPrincipal ventana = new PaginaPrincipal(p);

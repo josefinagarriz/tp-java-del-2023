@@ -26,33 +26,33 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
     @Override
     public void avanzar(double seg)
     {
-        System.out.println("Avanzando "+seg+" en el video "+ getTitulo());
+        System.out.println("Avanzando "+seg+" en el video "+getCodigo());
     }
 
     @Override
     public void retroceder(double seg)
     {
-        System.out.println("Retrocediendo "+seg+" en el video "+ getTitulo());
+        System.out.println("Retrocediendo "+seg+" en el video "+ getCodigo());
     }
 
     @Override
     public void detener() {
-        System.out.println("Deteniendo el video "+ getTitulo());
+        System.out.println("Deteniendo el video "+ getCodigo());
     }
 
     @Override
     public void reanudar() {
-        System.out.println("Reanudar el video "+ getTitulo());
+        System.out.println("Reanudar el video "+ getCodigo());
     }
 
     @Override
     public void aplicarFiltro(String filtro) {
-        System.out.println("Aplicando filtro " + filtro +" en el video "+ getTitulo());
+        System.out.println("Aplicando filtro " + filtro +" en el video "+ getCodigo());
     }
 
     @Override
     public void sacarFiltro() {
-        System.out.println("Sacando filtro en el video "+ getTitulo());
+        System.out.println("Sacando filtro en el video "+ getCodigo());
     }
 
 }

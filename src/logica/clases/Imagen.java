@@ -19,12 +19,12 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
 
     @Override
     public void aplicarFiltro(String filtro) {
-        System.out.println("Aplicando filtro " + filtro +" en la imágen "+ getTitulo());
+        System.out.println("Aplicando filtro " + filtro +" en la imágen "+ getCodigo());
     }
 
     @Override
     public void sacarFiltro() {
-        System.out.println("Sacando filtro en la imágen "+ getTitulo());
+        System.out.println("Sacando filtro en la imágen "+ getCodigo());
     }
 
 }

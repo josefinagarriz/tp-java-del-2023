@@ -23,6 +23,30 @@ public class Perfil {
     //Getters
     public List<Publicacion> getPublicaciones() {return publicaciones;}
     public List<Album> getAlbumes() {return albumes;}
+    public List<Imagen> getImagenes()
+    {
+        List<Imagen> imagenes = new ArrayList<>();
+        for (Publicacion p : publicaciones)
+            if (p instanceof Imagen)
+                imagenes.add((Imagen)p);
+        return imagenes;
+    }
+    public List<Video> getVideos()
+    {
+        List<Video> videos = new ArrayList<>();
+        for (Publicacion p : publicaciones)
+            if (p instanceof Video)
+                videos.add((Video)p);
+        return videos;
+    }
+    public List<Audio> getAudios()
+    {
+        List<Audio> audios = new ArrayList<>();
+        for (Publicacion p : publicaciones)
+            if (p instanceof Audio)
+                audios.add((Audio)p);
+        return audios;
+    }
 
     //Contar
     public int contarCantPublicaciones() {return publicaciones.size();}
