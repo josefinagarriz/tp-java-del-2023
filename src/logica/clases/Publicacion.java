@@ -12,7 +12,6 @@ public class Publicacion {
     private int cantLikes;
     private List<String> etiquetas = new ArrayList<>();
     private int cantComentarios;
-    private Map<String,Perfil> comentarios = new HashMap<>();
 
     public Publicacion (String tit,String des, LocalDate f, LocalTime h)
     {

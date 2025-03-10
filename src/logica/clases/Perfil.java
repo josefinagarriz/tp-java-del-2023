@@ -9,9 +9,7 @@ public class Perfil {
     private LocalDate ingreso;
     private int cantSeguidores;
     private int cantSeguidos;
-    private int cantPublicaciones;
     private List<Publicacion> publicaciones = new ArrayList<>();
-    private int cantAlbumes;
     private List<Album> albumes = new ArrayList<>();
 
     public Perfil (String nomU, LocalDate ing)
@@ -20,13 +18,15 @@ public class Perfil {
         ingreso=ing;
         cantSeguidores=0;
         cantSeguidos=0;
-        cantPublicaciones=0;
-        cantAlbumes=0;
     }
 
     //Getters
     public List<Publicacion> getPublicaciones() {return publicaciones;}
     public List<Album> getAlbumes() {return albumes;}
+
+    //Contar
+    public int contarCantPublicaciones() {return publicaciones.size();}
+    public int contarCantAlbumes() {return albumes.size();}
 
     //Gestionar Albumes
 
