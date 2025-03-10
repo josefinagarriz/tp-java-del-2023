@@ -11,5 +11,18 @@ import java.awt.event.ActionListener;
 
 public class PaginaPrincipal extends JFrame{
 
-    private Perfil perfil;
+    private Perfil p;
+
+
+    public PaginaPrincipal(Perfil perfil)
+    {
+        p=perfil;
+        inicializarComponenetes();
+    }
+
+    public void inicializarComponenetes()
+    {
+        //f
+    }
+
 }
