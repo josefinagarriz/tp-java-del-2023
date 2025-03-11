@@ -108,17 +108,84 @@ public class LectorXML {
 
     private void validarImagen(Imagen i) throws ExcepcionArchivoInvalido
     {
-        //f
+        if (i.getCodigo() == null || i.getCodigo().isEmpty()) {
+            throw new ExcepcionArchivoInvalido("El código de la imagen no puede estar vacío.");
+        }
+        if (i.getFecha() == null) {
+            throw new ExcepcionArchivoInvalido("La fecha no puede ser nula.");
+        }
+        if (i.getHora() == null) {
+            throw new ExcepcionArchivoInvalido("La hora no puede ser nula.");
+        }
+        if (i.getCantLikes() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de likes debe ser un número positivo ó 0.");
+        }
+        if (i.getCantComentarios() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de comentarios debe ser un número positivo ó 0.");
+        }
+        if (i.getResolucion() <= 0) {
+            throw new ExcepcionArchivoInvalido("La resolución debe ser un número positivo.");
+        }
+        if (i.getAlto() <= 0) {
+            throw new ExcepcionArchivoInvalido("El alto debe ser un número positivo.");
+        }
+        if (i.getAncho() <= 0) {
+            throw new ExcepcionArchivoInvalido("El ancho debe ser un número positivo.");
+        }
+
     }
 
     private void validarVideo(Video v) throws ExcepcionArchivoInvalido
     {
-        //f
+        if (v.getCodigo() == null || v.getCodigo().isEmpty()) {
+            throw new ExcepcionArchivoInvalido("El código del video no puede estar vacío.");
+        }
+        if (v.getFecha() == null) {
+            throw new ExcepcionArchivoInvalido("La fecha no puede ser nula.");
+        }
+        if (v.getHora() == null) {
+            throw new ExcepcionArchivoInvalido("La hora no puede ser nula.");
+        }
+        if (v.getCantLikes() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de likes debe ser un número positivo ó 0.");
+        }
+        if (v.getCantComentarios() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de comentarios debe ser un número positivo ó 0.");
+        }
+        if (v.getDuracionSegundos() <= 0) {
+            throw new ExcepcionArchivoInvalido("La duración debe ser un número positivo.");
+        }
+        if (v.getResolucion() <= 0) {
+            throw new ExcepcionArchivoInvalido("La resolución debe ser un número positivo.");
+        }
+        if (v.getCantCuadros() <= 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de cuadros debe ser un número positivo.");
+        }
     }
 
     private void validarAudio(Audio a) throws ExcepcionArchivoInvalido
     {
-        //f
+        if (a.getCodigo() == null || a.getCodigo().isEmpty()) {
+            throw new ExcepcionArchivoInvalido("El código del audio no puede estar vacío.");
+        }
+        if (a.getFecha() == null) {
+            throw new ExcepcionArchivoInvalido("La fecha no puede ser nula.");
+        }
+        if (a.getHora() == null) {
+            throw new ExcepcionArchivoInvalido("La hora no puede ser nula.");
+        }
+        if (a.getCantLikes() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de likes debe ser un número positivo ó 0.");
+        }
+        if (a.getCantComentarios() < 0) {
+            throw new ExcepcionArchivoInvalido("La cantidad de comentarios debe ser un número positivo ó 0.");
+        }
+        if (a.getDuracionSegundos() <= 0) {
+            throw new ExcepcionArchivoInvalido("La duración debe ser un número positivo.");
+        }
+        if (a.getVelocidadBits() <= 0) {
+            throw new ExcepcionArchivoInvalido("La velocidad por bit debe ser un número positivo.");
+        }
     }
 
 }

@@ -16,6 +16,10 @@ public class Audio extends Publicacion implements logica.interfaces.Durable{
         velocidadBits= vB;
     }
 
+    //getters
+    public double getDuracionSegundos() {return duracionSegundos;}
+    public int getVelocidadBits() {return velocidadBits;}
+
     @Override
     public double getDuracion()
     {

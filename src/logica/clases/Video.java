@@ -18,6 +18,11 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
         cantCuadros= cantC;
     }
 
+    //getters
+    public int getResolucion() {return resolucion;}
+    public int getCantCuadros() {return cantCuadros;}
+    public double getDuracionSegundos() {return duracionSegundos;}
+
     @Override
     public double getDuracion()
     {
