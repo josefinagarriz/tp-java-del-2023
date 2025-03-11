@@ -47,4 +47,12 @@ public class Audio extends Publicacion implements logica.interfaces.Durable{
     public void reanudar() {
         System.out.println("Reanudar el audio "+ getCodigo());
     }
+
+
+    @Override
+    public String toString()
+    {
+        return  "   -Audio " + super.toString() +
+                "\n   Duración: " + LocalTime.ofSecondOfDay((int)duracionSegundos) +
+                "\n   Velocidad por bits: " + velocidadBits;}
 }

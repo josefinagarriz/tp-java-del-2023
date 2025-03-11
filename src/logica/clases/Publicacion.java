@@ -32,4 +32,14 @@ public class Publicacion {
     public LocalDate getFecha() {return fecha;}
     public LocalTime getHora() {return hora;}
     public int getCantComentarios() {return cantComentarios;}
+
+    @Override
+    public String toString()
+    {return codigo +
+            "\n   Descripción: " + descripcion +
+            "\n   Fecha de p: " + fecha.toString() +
+            "\n   Hora de p: " + hora.toString() +
+            "\n   Likes: " + cantLikes +
+            "\n   Comentarios: " + cantComentarios +
+            "\n   Etiquetas: " + etiquetas;}
 }

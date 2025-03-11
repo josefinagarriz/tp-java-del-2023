@@ -33,4 +33,11 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
         System.out.println("Sacando filtro en la imágen "+ getCodigo());
     }
 
+
+    @Override
+    public String toString()
+    {
+        return  "   -Imagen " + super.toString() +
+                "\n   Resolucion: " + resolucion +
+                "\n   Alto y ancho: " + alto + "x" + ancho;}
 }

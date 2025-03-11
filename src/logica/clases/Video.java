@@ -61,4 +61,13 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
         System.out.println("Sacando filtro en el video "+ getCodigo());
     }
 
+
+    @Override
+    public String toString()
+    {
+        return  "   -Video " + super.toString() +
+                "\n   Duración: " + LocalTime.ofSecondOfDay((int)duracionSegundos) +
+                "\n   Resolucion: " + resolucion +
+                "\n   Cantidad de Cuadros: " + cantCuadros;}
+
 }

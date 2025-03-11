@@ -274,19 +274,30 @@ public class Album {
         return false;
     }
 
-
-
     @Override
     public String toString()
     {
-        return "Nombre: "+nombre+"\nLikes totales: "+calcularAcumLikes()+"\nFecha de creación: "+ fechaCreacion.toString() +"\nHora de creación: "+ horaCreacion.toString()+ "\n";
+        return  "-Album " + nombre +
+                "\nLikes totales: " + calcularAcumLikes() +
+                "\nCantidad de imagenes: " + calcularCantImagenes() +
+                "\nCantidad de videos: " + calcularCantVideos() +
+                "\nCantidad de audios: " + calcularCantAudios() +
+                "\nFecha de creación: " + fechaCreacion.toString() +
+                "\nOrden: " + orden;}
+
+    public String mostrarInteriorAlbum()
+    {
+        StringBuilder sb1 = new StringBuilder();
+        for (Album a : subAlbumes)
+            sb1.append(a.toString()).append("\n");
+
+        StringBuilder sb2 = new StringBuilder();
+        for (Publicacion p : publicaciones)
+            sb2.append(p.toString()).append("\n");
+
+        return sb1.toString() + sb2.toString();
     }
+
 }
-/*
-    private LocalDate fechaCreacion;
-    private LocalTime horaCreacion;
-    private List<Publicacion> publicaciones = new ArrayList<>();
-    private List<Album> subAlbumes = new ArrayList<>();
-    private int orden;
- */
+
 
