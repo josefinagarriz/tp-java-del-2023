@@ -3,13 +3,12 @@
 	<Imagenes>
 		<Imagen>
 			<codigo>COD156</codigo>
-			<descripcion>En mardel con mamá :)</descripcion>
 			<fecha>2023-02-13</fecha>
 			<hora>17:08</hora>
 			<cantLikes>53</cantLikes>
 			<etiquetas>
-				<etiqueta>#playa</etiqueta>
-				<etiqueta>#vacaciones</etiqueta>
+				<etiqueta>playa</etiqueta>
+				<etiqueta>vacaciones</etiqueta>
 			</etiquetas>
 			<cantComentarios>2</cantComentarios>
 			<resolucion>300</resolucion>
@@ -23,8 +22,8 @@
 			<hora>19:45</hora>
 			<cantLikes>120</cantLikes>
 			<etiquetas>
-				<etiqueta>#atardecer</etiqueta>
-				<etiqueta>#montañas</etiqueta>
+				<etiqueta>atardecer</etiqueta>
+				<etiqueta>montañas</etiqueta>
 			</etiquetas>
 			<cantComentarios>8</cantComentarios>
 			<resolucion>1080</resolucion>
@@ -38,23 +37,24 @@
 			<hora>10:30</hora>
 			<cantLikes>89</cantLikes>
 			<etiquetas>
-				<etiqueta>#naturaleza</etiqueta>
-				<etiqueta>#senderismo</etiqueta>
+				<etiqueta>naturaleza</etiqueta>
+				<etiqueta>senderismo</etiqueta>
 			</etiquetas>
 			<cantComentarios>5</cantComentarios>
 			<resolucion>720</resolucion>
 			<ancho>1280</ancho>
 			<alto>720</alto>
+			<filtro>DESENFOQUE</filtro>
 		</Imagen>
 		<Imagen>
 			<codigo>COD159</codigo>
-			<descripcion>Mi perro jugando en la plaza <3 que lindooooooo </descripcion>
+			<descripcion>Mi perro jugando en la plaza (corazon) que lindooooooo </descripcion>
 			<fecha>2023-08-11</fecha>
 			<hora>16:45</hora>
 			<cantLikes>145</cantLikes>
 			<etiquetas>
-				<etiqueta>#perros</etiqueta>
-				<etiqueta>#mascotas</etiqueta>
+				<etiqueta>perros</etiqueta>
+				<etiqueta>mascotas</etiqueta>
 			</etiquetas>
 			<cantComentarios>18</cantComentarios>
 			<resolucion>1080</resolucion>
@@ -68,9 +68,9 @@
 			<hora>06:45</hora>
 			<cantLikes>1569</cantLikes>
 			<etiquetas>
-				<etiqueta>#amanecer</etiqueta>
-				<etiqueta>#mar</etiqueta>
-				<etiqueta>#playa</etiqueta>
+				<etiqueta>amanecer</etiqueta>
+				<etiqueta>mar</etiqueta>
+				<etiqueta>playa</etiqueta>
 			</etiquetas>
 			<cantComentarios>15</cantComentarios>
 			<resolucion>1080</resolucion>
@@ -83,14 +83,11 @@
 			<fecha>2022-09-10</fecha>
 			<hora>21:30</hora>
 			<cantLikes>180</cantLikes>
-			<etiquetas>
-				<etiqueta>#boda</etiqueta>
-				<etiqueta>#familia</etiqueta>
-			</etiquetas>
 			<cantComentarios>22</cantComentarios>
 			<resolucion>720</resolucion>
 			<ancho>1280</ancho>
 			<alto>720</alto>
+			<filtro>SEPIA</filtro>
 		</Imagen>
 		<Imagen>
 			<codigo>COD162</codigo>
@@ -99,13 +96,14 @@
 			<hora>20:00</hora>
 			<cantLikes>320</cantLikes>
 			<etiquetas>
-				<etiqueta>#navidad</etiqueta>
-				<etiqueta>#decoracion</etiqueta>
+				<etiqueta>navidad</etiqueta>
+				<etiqueta>decoracion</etiqueta>
 			</etiquetas>
 			<cantComentarios>30</cantComentarios>
 			<resolucion>1080</resolucion>
 			<ancho>1920</ancho>
 			<alto>1080</alto>
+			<filtro>SEPIA</filtro>
 		</Imagen>
 		<Imagen>
 			<codigo>COD163</codigo>
@@ -114,13 +112,14 @@
 			<hora>14:15</hora>
 			<cantLikes>95</cantLikes>
 			<etiquetas>
-				<etiqueta>#arte</etiqueta>
-				<etiqueta>#museo</etiqueta>
+				<etiqueta>arte</etiqueta>
+				<etiqueta>museo</etiqueta>
 			</etiquetas>
 			<cantComentarios>12</cantComentarios>
 			<resolucion>720</resolucion>
 			<ancho>1280</ancho>
 			<alto>720</alto>
+			<filtro>BLANCO_Y_NEGRO</filtro>
 		</Imagen>
 		<Imagen>
 			<codigo>COD164</codigo>
@@ -129,10 +128,10 @@
 			<hora>10:30</hora>
 			<cantLikes>150</cantLikes>
 			<etiquetas>
-				<etiqueta>#aventura</etiqueta>
-				<etiqueta>#selva</etiqueta>
-				<etiqueta>#vacaciones</etiqueta>
-				<etiqueta>#misiones</etiqueta>
+				<etiqueta>aventura</etiqueta>
+				<etiqueta>selva</etiqueta>
+				<etiqueta>vacaciones</etiqueta>
+				<etiqueta>misiones</etiqueta>
 			</etiquetas>
 			<cantComentarios>18</cantComentarios>
 			<resolucion>1080</resolucion>
@@ -146,15 +145,16 @@
 			<hora>15:45</hora>
 			<cantLikes>218</cantLikes>
 			<etiquetas>
-				<etiqueta>#montañismo</etiqueta>
-				<etiqueta>#montañas</etiqueta>
-				<etiqueta>#cima</etiqueta>
-				<etiqueta>#naturaleza</etiqueta>
+				<etiqueta>montañismo</etiqueta>
+				<etiqueta>montañas</etiqueta>
+				<etiqueta>cima</etiqueta>
+				<etiqueta>naturaleza</etiqueta>
 			</etiquetas>
 			<cantComentarios>25</cantComentarios>
 			<resolucion>720</resolucion>
 			<ancho>1280</ancho>
 			<alto>720</alto>
+			<filtro>BRILLO</filtro>
 		</Imagen>
 	</Imagenes>
 	<Videos>
@@ -165,10 +165,10 @@
 			<hora>09:22</hora>
 			<cantLikes>101</cantLikes>
 			<etiquetas>
-				<etiqueta>#voley</etiqueta>
-				<etiqueta>#deportes</etiqueta>
-				<etiqueta>#leones</etiqueta>
-				<etiqueta>#estudiantes</etiqueta>
+				<etiqueta>voley</etiqueta>
+				<etiqueta>deportes</etiqueta>
+				<etiqueta>leones</etiqueta>
+				<etiqueta>estudiantes</etiqueta>
 			</etiquetas>
 			<cantComentarios>12</cantComentarios>
 			<duracionSegundos>110</duracionSegundos>
@@ -182,31 +182,30 @@
 			<hora>01:15</hora>
 			<cantLikes>325</cantLikes>
 			<etiquetas>
-				<etiqueta>#musica</etiqueta>
-				<etiqueta>#recital</etiqueta>
-				<etiqueta>#rock</etiqueta>
+				<etiqueta>musica</etiqueta>
+				<etiqueta>recital</etiqueta>
+				<etiqueta>rock</etiqueta>
 			</etiquetas>
 			<cantComentarios>22</cantComentarios>
 			<duracionSegundos>30</duracionSegundos>
 			<resolucion>1920</resolucion>
 			<cantCuadros>60</cantCuadros>
 		</Video>
-	<Videos>
 		<Video>
 			<codigo>COD278</codigo>
-			<descripcion>Surf en la playa con amigos</descripcion>
 			<fecha>2024-02-17</fecha>
 			<hora>14:00</hora>
 			<cantLikes>260</cantLikes>
 			<etiquetas>
-				<etiqueta>#surf</etiqueta>
-				<etiqueta>#playa</etiqueta>
-				<etiqueta>#verano</etiqueta>
+				<etiqueta>surf</etiqueta>
+				<etiqueta>playa</etiqueta>
+				<etiqueta>verano</etiqueta>
 			</etiquetas>
 			<cantComentarios>35</cantComentarios>
 			<duracionSegundos>180</duracionSegundos>
 			<resolucion>1280</resolucion>
 			<cantCuadros>30</cantCuadros>
+			<filtro>SATURACION</filtro>
 		</Video>
 		<Video>
 			<codigo>COD279</codigo>
@@ -215,9 +214,9 @@
 			<hora>12:10</hora>
 			<cantLikes>90</cantLikes>
 			<etiquetas>
-				<etiqueta>#cocina</etiqueta>
-				<etiqueta>#receta</etiqueta>
-				<etiqueta>#chocolate</etiqueta>
+				<etiqueta>cocina</etiqueta>
+				<etiqueta>receta</etiqueta>
+				<etiqueta>chocolate</etiqueta>
 			</etiquetas>
 			<cantComentarios>10</cantComentarios>
 			<duracionSegundos>2437</duracionSegundos>
@@ -231,15 +230,16 @@
 			<hora>22:10</hora>
 			<cantLikes>275</cantLikes>
 			<etiquetas>
-				<etiqueta>#fogata</etiqueta>
-				<etiqueta>#amigos</etiqueta>
-				<etiqueta>#playa</etiqueta>
-				<etiqueta>#guitarra</etiqueta>
+				<etiqueta>fogata</etiqueta>
+				<etiqueta>amigos</etiqueta>
+				<etiqueta>playa</etiqueta>
+				<etiqueta>guitarra</etiqueta>
 			</etiquetas>
 			<cantComentarios>20</cantComentarios>
 			<duracionSegundos>200</duracionSegundos>
 			<resolucion>1080</resolucion>
 			<cantCuadros>30</cantCuadros>
+			<filtro>BLANCO>>_Y_NEGRO</filtro>
 		</Video>
 		<Video>
 			<codigo>COD281</codigo>
@@ -248,13 +248,14 @@
 			<hora>01:58</hora>
 			<cantLikes>500</cantLikes>
 			<etiquetas>
-				<etiqueta>#añonuevo</etiqueta>
-				<etiqueta>#fuegosartificiales</etiqueta>
+				<etiqueta>añonuevo</etiqueta>
+				<etiqueta>fuegosartificiales</etiqueta>
 			</etiquetas>
 			<cantComentarios>45</cantComentarios>
 			<duracionSegundos>300</duracionSegundos>
 			<resolucion>729</resolucion>
 			<cantCuadros>25</cantCuadros>
+			<filtro>CONTRASTE</filtro>
 		</Video>
 	</Videos>
 	<Audios>
@@ -265,9 +266,9 @@
 			<hora>22:30</hora>
 			<cantLikes>887</cantLikes>
 			<etiquetas>
-				<etiqueta>#guitarra</etiqueta>
-				<etiqueta>#gancion</etiqueta>
-				<etiqueta>#cantar</etiqueta>
+				<etiqueta>guitarra</etiqueta>
+				<etiqueta>gancion</etiqueta>
+				<etiqueta>cantar</etiqueta>
 			</etiquetas>
 			<cantComentarios>40</cantComentarios>
 			<duracionSegundos>256</duracionSegundos>
@@ -280,9 +281,9 @@
 			<hora>08:00</hora>
 			<cantLikes>210</cantLikes>
 			<etiquetas>
-				<etiqueta>#radio</etiqueta>
-				<etiqueta>#tecnologia</etiqueta>
-				<etiqueta>#podcast</etiqueta>
+				<etiqueta>radio</etiqueta>
+				<etiqueta>tecnologia</etiqueta>
+				<etiqueta>podcast</etiqueta>
 			</etiquetas>
 			<cantComentarios>15</cantComentarios>
 			<duracionSegundos>1800</duracionSegundos>
@@ -295,11 +296,11 @@
 			<hora>18:20</hora>
 			<cantLikes>500</cantLikes>
 			<etiquetas>
-				<etiqueta>#ciencia</etiqueta>
-				<etiqueta>#astronomia</etiqueta>
-				<etiqueta>#universo</etiqueta>
-				<etiqueta>#radio</etiqueta>
-				<etiqueta>#podcast</etiqueta>
+				<etiqueta>ciencia</etiqueta>
+				<etiqueta>astronomia</etiqueta>
+				<etiqueta>universo</etiqueta>
+				<etiqueta>radio</etiqueta>
+				<etiqueta>podcast</etiqueta>
 			</etiquetas>
 			<cantComentarios>60</cantComentarios>
 			<duracionSegundos>3600</duracionSegundos>
@@ -312,9 +313,9 @@
 			<hora>23:50</hora>
 			<cantLikes>750</cantLikes>
 			<etiquetas>
-				<etiqueta>#relax</etiqueta>
-				<etiqueta>#lluvia</etiqueta>
-				<etiqueta>#meditacion</etiqueta>
+				<etiqueta>relax</etiqueta>
+				<etiqueta>lluvia</etiqueta>
+				<etiqueta>meditacion</etiqueta>
 			</etiquetas>
 			<cantComentarios>30</cantComentarios>
 			<duracionSegundos>1800</duracionSegundos>

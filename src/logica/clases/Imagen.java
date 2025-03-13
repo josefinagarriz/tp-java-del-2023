@@ -13,18 +13,20 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
     private int alto;
     private Filtro filtro;
 
-    public Imagen (int res, int an, int al, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
+    public Imagen (int res, int an, int al, Filtro fil, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
         super (c, des, f, h, likes, et, com);
         resolucion= res;
         ancho= an;
         alto= al;
+        filtro=fil;
     }
 
     //getter
     public int getResolucion() {return resolucion;}
     public int getAncho() {return ancho;}
     public int getAlto() {return alto;}
+    public Filtro getFiltro() {return filtro;}
 
     @Override
     public void aplicarFiltro(Filtro f)
