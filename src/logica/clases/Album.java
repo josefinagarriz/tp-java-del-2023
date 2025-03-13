@@ -25,6 +25,9 @@ public class Album {
     public List<Album> getSubAlbumes() {return subAlbumes;}
     public String getNombre() {return nombre;}
     public List<Publicacion> getPublicaciones() {return publicaciones;}
+    public LocalDate getFechaCreacion() {return fechaCreacion;}
+    public LocalTime getHoraCreacion() {return horaCreacion;}
+    public int getOrden() {return orden;}
 
     //setters
     public void setOrden(int o)

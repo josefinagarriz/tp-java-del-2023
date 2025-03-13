@@ -4,11 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import logica.enums.*;
+
 public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
 
     private int resolucion;
     private int ancho;
     private int alto;
+    private Filtro filtro;
 
     public Imagen (int res, int an, int al, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
@@ -24,13 +27,17 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
     public int getAlto() {return alto;}
 
     @Override
-    public void aplicarFiltro(String filtro) {
-        System.out.println("Aplicando filtro " + filtro +" en la imágen "+ getCodigo());
+    public void aplicarFiltro(Filtro f)
+    {
+        filtro=f;
+        System.out.println("Aplicando filtro " + f +" en la imágen "+ getCodigo());
     }
 
     @Override
-    public void sacarFiltro() {
+    public void sacarFiltro()
+    {
         System.out.println("Sacando filtro en la imágen "+ getCodigo());
+        filtro=null;
     }
 
 

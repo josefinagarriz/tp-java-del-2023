@@ -1,6 +1,8 @@
 package logica.interfaces;
 
+import logica.enums.*;
+
 public interface Filtrable {
-    void aplicarFiltro(String fil);
+    void aplicarFiltro(Filtro fil);
     void sacarFiltro();
 }

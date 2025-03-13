@@ -28,10 +28,12 @@ public class Publicacion {
     //getters
 
     public int getCantLikes() {return cantLikes;}
+    public String getDescripcion() {return descripcion;}
     public String getCodigo() {return codigo;}
     public LocalDate getFecha() {return fecha;}
     public LocalTime getHora() {return hora;}
     public int getCantComentarios() {return cantComentarios;}
+    public List<String> getEtiquetas() {return etiquetas;}
 
     @Override
     public String toString()

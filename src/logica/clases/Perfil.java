@@ -16,11 +16,15 @@ public class Perfil {
     {
         nombreUsuario=nomU;
         ingreso=ing;
-        cantSeguidores=0;
-        cantSeguidos=0;
+        cantSeguidores=156;
+        cantSeguidos=23;
     }
 
     //Getters
+    public String getNombreUsuario() {return nombreUsuario;}
+    public LocalDate getIngreso() {return ingreso;}
+    public int getCantSeguidores() {return cantSeguidores;}
+    public int getCantSeguidos() {return cantSeguidos;}
     public List<Publicacion> getPublicaciones() {return publicaciones;}
     public List<Album> getAlbumes() {return albumes;}
     public List<Imagen> getImagenes()

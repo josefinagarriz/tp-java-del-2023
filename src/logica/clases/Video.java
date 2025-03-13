@@ -4,11 +4,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import logica.enums.*;
+
 public class Video extends Publicacion implements logica.interfaces.Durable, logica.interfaces.Filtrable{
 
     private double duracionSegundos;
     private int resolucion;
     private int cantCuadros;
+    private Filtro filtro;
 
     public Video (double dS, int res, int cantC, String c, String des, LocalDate f, LocalTime h, int likes, List<String> et, int com)
     {
@@ -22,6 +25,7 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
     public int getResolucion() {return resolucion;}
     public int getCantCuadros() {return cantCuadros;}
     public double getDuracionSegundos() {return duracionSegundos;}
+    public Filtro getFiltro() {return filtro;}
 
     @Override
     public double getDuracion()
@@ -52,13 +56,17 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
     }
 
     @Override
-    public void aplicarFiltro(String filtro) {
-        System.out.println("Aplicando filtro " + filtro +" en el video "+ getCodigo());
+    public void aplicarFiltro(Filtro f)
+    {
+        filtro=f;
+        System.out.println("Aplicando filtro " + f +" en el video "+ getCodigo());
     }
 
     @Override
-    public void sacarFiltro() {
+    public void sacarFiltro()
+    {
         System.out.println("Sacando filtro en el video "+ getCodigo());
+        filtro=null;
     }
 
 
