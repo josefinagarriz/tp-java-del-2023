@@ -201,7 +201,7 @@ public class LectorXML {
         if (v.getCantComentarios() < 0) {
             throw new ExcepcionArchivoInvalido("La cantidad de comentarios debe ser un número positivo ó 0.");
         }
-        if (v.getDuracionSegundos() <= 0) {
+        if (v.getDuracion() <= 0) {
             throw new ExcepcionArchivoInvalido("La duración debe ser un número positivo.");
         }
         if (v.getResolucion() <= 0) {
@@ -247,7 +247,7 @@ public class LectorXML {
         if (a.getCantComentarios() < 0) {
             throw new ExcepcionArchivoInvalido("La cantidad de comentarios debe ser un número positivo ó 0.");
         }
-        if (a.getDuracionSegundos() <= 0) {
+        if (a.getDuracion() <= 0) {
             throw new ExcepcionArchivoInvalido("La duración debe ser un número positivo.");
         }
         if (a.getVelocidadBits() <= 0) {
