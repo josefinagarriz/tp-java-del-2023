@@ -50,25 +50,50 @@ public class PaginaPrincipal extends JFrame{
         add(panelIzquierdo, BorderLayout.WEST);
 
         // Panel central con álbumes y publicaciones
-        JPanel panelCentral = new JPanel(new GridLayout(2, 1));
+        JPanel panelCentral = new JPanel(new BorderLayout());
 
         // Sección de Álbumes
-        JPanel panelAlbumes = new JPanel(new FlowLayout());
+        JPanel panelAlbumes = new JPanel();
+        panelAlbumes.setLayout(new BoxLayout(panelAlbumes, BoxLayout.X_AXIS)); // Hace que los botones estén en fila
         panelAlbumes.setBorder(BorderFactory.createTitledBorder("TUS ALBUMES:"));
-        for (int i = 1; i <= 6; i++) {
-            panelAlbumes.add(new JButton(new ImageIcon("album.jpg")));
+        for (int i = 1; i <= 18; i++) {
+            panelAlbumes.add(new JButton(escalarJPG("/interfazGrafica/recursos/album.jpg", 80, 80)));
+            panelAlbumes.add(Box.createRigidArea(new Dimension(10, 0))); // Espacio de 10px entre botones
         }
+        // **Forzar tamaño para que desborde horizontalmente**
+        panelAlbumes.setPreferredSize(new Dimension(18 * 90 + (18 * 10), 100)); // Se ajusta según la cantidad de álbumes
+
+        // **Scroll horizontal**
         JScrollPane scrollAlbumes = new JScrollPane(panelAlbumes, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        panelCentral.add(scrollAlbumes);
+
+        // Contenedor para ajustar altura
+        JPanel contenedorAlbumes = new JPanel(new BorderLayout());
+        contenedorAlbumes.setPreferredSize(new Dimension(800, 120)); // Más angosto
+        contenedorAlbumes.add(scrollAlbumes, BorderLayout.CENTER);
+
+        panelCentral.add(contenedorAlbumes, BorderLayout.NORTH);
 
         // Sección de Publicaciones
-        JPanel panelPublicaciones = new JPanel(new FlowLayout());
+        JPanel panelPublicaciones = new JPanel(new GridLayout(0, 8, 10, 10)); // Filas dinámicas, 3 columnas, con espacio
         panelPublicaciones.setBorder(BorderFactory.createTitledBorder("TUS PUBLICACIONES:"));
         for (int i = 1; i <= 10; i++) {
-            panelPublicaciones.add(new JButton(new ImageIcon("publicacion.jpg")));
+            panelPublicaciones.add(new JButton(escalarJPG("/interfazGrafica/recursos/imagen.jpg", 110, 110)));
+            panelPublicaciones.add(new JButton(escalarJPG("/interfazGrafica/recursos/video.jpg", 110, 110)));
+            panelPublicaciones.add(new JButton(escalarJPG("/interfazGrafica/recursos/audio.jpg", 110, 110)));
         }
-        JScrollPane scrollPublicaciones = new JScrollPane(panelPublicaciones, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        panelCentral.add(scrollPublicaciones);
+
+        // Envolver en otro panel con FlowLayout para centrarlo dentro del JScrollPane
+        JPanel contenedorPublicaciones = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        contenedorPublicaciones.add(panelPublicaciones);
+
+        // Agregar a JScrollPane con barra de desplazamiento vertical
+        JScrollPane scrollPublicaciones = new JScrollPane(contenedorPublicaciones, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        // Ajustar tamaño del contenedor principal
+        JPanel wrapperPublicaciones = new JPanel(new BorderLayout());
+        wrapperPublicaciones.setPreferredSize(new Dimension(800, 360));
+        wrapperPublicaciones.add(scrollPublicaciones);
+        panelCentral.add(wrapperPublicaciones, BorderLayout.CENTER);
 
         add(panelCentral, BorderLayout.CENTER);
 
@@ -80,9 +105,16 @@ public class PaginaPrincipal extends JFrame{
         panelInferior.add(new JButton("Todas las publicaciones"));
         panelInferior.add(new JButton("Estadísticas y reportes"));
 
-        textBuscador = new JTextField(15);
+        textBuscador = new JTextField(25);
         panelInferior.add(textBuscador);
         add(panelInferior, BorderLayout.SOUTH);
+    }
+
+    private ImageIcon escalarJPG(String archivo, int ancho, int alto) {
+        ImageIcon icon = new ImageIcon(getClass().getResource(archivo));
+        Image img = icon.getImage();
+        Image newImg = img.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+        return new ImageIcon(newImg);
     }
 
 }
