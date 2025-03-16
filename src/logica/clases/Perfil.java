@@ -55,6 +55,10 @@ public class Perfil {
     //agregar publicaciones
     public void agregarPublicacion(Publicacion p) {
         publicaciones.add(p);
+        // Ordenar de más nueva a más vieja
+        publicaciones.sort(Comparator.comparing(Publicacion::getFecha)
+                .thenComparing(Publicacion::getHora)
+                .reversed());
     }
 
     //Contar

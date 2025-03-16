@@ -20,6 +20,15 @@ public class Audio extends Publicacion implements logica.interfaces.Durable{
         velocidadBits= vB;
     }
 
+    public Audio (double dS, int vB, String c, String des, LocalDate f, LocalTime h, List<String> et)
+    {
+        super (c, des, f, h, et);
+        duracionSegundos= dS;
+        tiempoActual = 0;
+        velocidadBits= vB;
+    }
+
+
     //getters
     public int getVelocidadBits() {return velocidadBits;}
     public double getTiempoActual() {return tiempoActual;}

@@ -24,6 +24,17 @@ public class Publicacion {
         cantComentarios=com;
     }
 
+    public Publicacion (String c,String des, LocalDate f, LocalTime h, List<String>et)
+    {
+        codigo=c;
+        descripcion=des;
+        fecha=f;
+        hora=h;
+        cantLikes=0;
+        etiquetas = (et != null) ? new ArrayList<>(et) : new ArrayList<>(); // Copia la lista o crea una nueva vacía si es null
+        cantComentarios=0;
+    }
+
 
     //getters
 

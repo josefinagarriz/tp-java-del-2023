@@ -22,6 +22,15 @@ public class Imagen extends Publicacion implements logica.interfaces.Filtrable{
         filtro=fil;
     }
 
+    public Imagen (int res, int an, int al, Filtro fil, String c, String des, LocalDate f, LocalTime h, List<String> et)
+    {
+        super (c, des, f, h, et);
+        resolucion= res;
+        ancho= an;
+        alto= al;
+        filtro=fil;
+    }
+
     //getter
     public int getResolucion() {return resolucion;}
     public int getAncho() {return ancho;}

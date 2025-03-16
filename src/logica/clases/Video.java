@@ -25,6 +25,16 @@ public class Video extends Publicacion implements logica.interfaces.Durable, log
         filtro=fil;
     }
 
+    public Video (double dS, int res, int cantC, Filtro fil, String c, String des, LocalDate f, LocalTime h, List<String> et)
+    {
+        super (c, des, f, h, et);
+        duracionSegundos= dS;
+        tiempoActual = 0;
+        resolucion= res;
+        cantCuadros= cantC;
+        filtro=fil;
+    }
+
     //getters
     public int getResolucion() {return resolucion;}
     public int getCantCuadros() {return cantCuadros;}

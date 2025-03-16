@@ -213,7 +213,7 @@ public class Album {
 
     public void eliminarTodoDelAlbum()
     {
-        publicaciones.clear(); // Eliminamos todas las publicaciones del álbum pero no las eliminamos del perfil
+        publicaciones.clear(); // Eliminamos todas las publicaciones del álbum, pero no las eliminamos del perfil
         for (Album subAlbum: new ArrayList<>(subAlbumes)) // Usamos una copia para evitar problemas al iterar
             subAlbum.eliminarTodoDelAlbum(); // Llamado recursivo para limpiar los subálbumes
         subAlbumes.clear(); //vaciamos la lista de subálbumes
