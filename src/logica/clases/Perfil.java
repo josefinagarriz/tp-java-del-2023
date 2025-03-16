@@ -12,12 +12,12 @@ public class Perfil {
     private List<Publicacion> publicaciones = new ArrayList<>();
     private List<Album> albumes = new ArrayList<>();
 
-    public Perfil (String nomU, LocalDate ing)
+    public Perfil (String nomU, LocalDate ing, int seguidores, int seguidos)
     {
         nombreUsuario=nomU;
         ingreso=ing;
-        cantSeguidores=156;
-        cantSeguidos=23;
+        cantSeguidores=seguidores;
+        cantSeguidos=seguidos;
     }
 
     //Getters

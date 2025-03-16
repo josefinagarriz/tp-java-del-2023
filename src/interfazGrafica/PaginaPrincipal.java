@@ -23,16 +23,6 @@ public class PaginaPrincipal extends JFrame{
 
     public void inicializarComponenetes()
     {
-        //f
-    }
-
-}
-/*
-import javax.swing.*;
-import java.awt.*;
-
-public class PaginaPrincipal extends JFrame {
-    public PaginaPrincipal() {
         setTitle("Red Social");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,7 +38,7 @@ public class PaginaPrincipal extends JFrame {
         // Panel izquierdo con foto de perfil y datos
         JPanel panelIzquierdo = new JPanel();
         panelIzquierdo.setLayout(new BoxLayout(panelIzquierdo, BoxLayout.Y_AXIS));
-        panelIzquierdo.add(new JLabel(new ImageIcon("perfil.jpg"))); // Imagen de perfil
+        panelIzquierdo.add(new JLabel(new ImageIcon(getClass().getResource("/interfazGrafica/recursos/perfil.jpg")))); // Imagen de perfil
         panelIzquierdo.add(new JLabel("Nombre:"));
         panelIzquierdo.add(new JLabel("Seguidores:"));
         panelIzquierdo.add(new JLabel("Seguidos:"));
@@ -56,27 +46,28 @@ public class PaginaPrincipal extends JFrame {
         panelIzquierdo.add(new JLabel("Cant likes:"));
         panelIzquierdo.add(new JLabel("Cant publicaciones:"));
         panelIzquierdo.add(new JButton("PUBLICAR"));
+        panelIzquierdo.add(new JButton("NUEVO ALBUM"));
         add(panelIzquierdo, BorderLayout.WEST);
 
         // Panel central con álbumes y publicaciones
         JPanel panelCentral = new JPanel(new GridLayout(2, 1));
 
         // Sección de Álbumes
-        JPanel panelAlbumes = new JPanel();
+        JPanel panelAlbumes = new JPanel(new FlowLayout());
         panelAlbumes.setBorder(BorderFactory.createTitledBorder("TUS ALBUMES:"));
-        JScrollPane scrollAlbumes = new JScrollPane(panelAlbumes);
         for (int i = 1; i <= 6; i++) {
             panelAlbumes.add(new JButton(new ImageIcon("album.jpg")));
         }
+        JScrollPane scrollAlbumes = new JScrollPane(panelAlbumes, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         panelCentral.add(scrollAlbumes);
 
         // Sección de Publicaciones
-        JPanel panelPublicaciones = new JPanel();
+        JPanel panelPublicaciones = new JPanel(new FlowLayout());
         panelPublicaciones.setBorder(BorderFactory.createTitledBorder("TUS PUBLICACIONES:"));
-        JScrollPane scrollPublicaciones = new JScrollPane(panelPublicaciones);
         for (int i = 1; i <= 10; i++) {
             panelPublicaciones.add(new JButton(new ImageIcon("publicacion.jpg")));
         }
+        JScrollPane scrollPublicaciones = new JScrollPane(panelPublicaciones, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         panelCentral.add(scrollPublicaciones);
 
         add(panelCentral, BorderLayout.CENTER);
@@ -88,13 +79,10 @@ public class PaginaPrincipal extends JFrame {
         panelInferior.add(new JButton("Solo audios"));
         panelInferior.add(new JButton("Todas las publicaciones"));
         panelInferior.add(new JButton("Estadísticas y reportes"));
-        panelInferior.add(new JTextField("Buscar...", 15));
+
+        textBuscador = new JTextField(15);
+        panelInferior.add(textBuscador);
         add(panelInferior, BorderLayout.SOUTH);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new PaginaPrincipal().setVisible(true));
-    }
 }
-
- */

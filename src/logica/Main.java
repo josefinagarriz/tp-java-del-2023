@@ -9,12 +9,12 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-
+/*
         Perfil p = Persistencia.DeserializarPerfil();
 
         if (p == null) {
             // Cargar datos desde el archivo XML si no hay datos serializados
-            p = new Perfil("JosefinaGa", LocalDate.of(2021, 5, 2));
+            p = new Perfil("JosefinaGa", LocalDate.of(2021, 5, 2), 156, 23);
             LectorXML lector = new LectorXML();
             try {
                 lector.cargarDatos("src/persistencia/datos_perfil.xml", p);
@@ -42,8 +42,6 @@ public class Main {
         PaginaPrincipal ventana = new PaginaPrincipal(p);
         ventana.setVisible(true);
 
-
-
         //Reportes
         Reportes reportes = new Reportes();
         Reportes.generarReportePublicacionesPorTipo(p.getPublicaciones());
@@ -57,7 +55,11 @@ public class Main {
                 System.out.println("Datos serializados correctamente.");
             }
         }));
+*/
 
+        Perfil p = new Perfil("JosefinaGa", LocalDate.of(2021, 5, 2), 156, 23);
+        PaginaPrincipal ventana = new PaginaPrincipal(p);
+        ventana.setVisible(true);
 
     }
 }
